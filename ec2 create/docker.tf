@@ -15,7 +15,7 @@ resource "aws_instance" "docker" {
      volume_type = "gp3"  # Use gp3 for better performance (optional)
   }
 
- provisioner "remote-exec" {
+/*  provisioner "remote-exec" {
     inline = [
       "sudo dnf -y install dnf-plugins-core",
       "sudo dnf config-manager --add-repo https://download.docker.com/linux/rhel/docker-ce.repo",
@@ -30,8 +30,8 @@ resource "aws_instance" "docker" {
     user        = "ec2-user"
     password    = "DevOps321"
     host        = self.public_ip
-  }
-  # user_data = file("docker.sh")
+  } */
+   user_data = file("docker.sh")
 }
 
 
