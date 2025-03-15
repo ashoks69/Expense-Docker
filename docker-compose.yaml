@@ -9,7 +9,7 @@ services:
     volumes:
     - mysql:/var/lib/mysql
     container_name: mysql
-    network:
+    networks:
     - ashok
   backend:
     image: backend:1.0.0
