@@ -14,6 +14,7 @@ services:
   backend:
     image: backend:1.0.0
     container_name: backend
+    command: sh -c "delay 5 && node /opt/backend/index.js"
     depends_on:
     - mysql
     networks:
